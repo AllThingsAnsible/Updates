@@ -17,3 +17,6 @@
   - name: Reboot when packages were updated
     reboot:
     when: yum_update_status.changed
+    
+  - name: Remove old kernels
+    shell: yum remove --oldinstallonly -y
